@@ -13,10 +13,10 @@ public class InputFileTest {
 	@Test
 	public void inputFileTest() {
 		DB db = new DB();
-		String filename = "hoge";
-		Map<String, Integer> stocks = db.imputfile(filename);
+		String filename = "H:\\git\\ucl-nii-jimbo\\ItemList.csv";
+		Map<String, Integer> stocks = db.inputFile(filename);
 		
-		assertThat(stocks.get("items"), is(10));
+		assertThat(stocks.get("Tea"), is(10));
 
 	}
 
