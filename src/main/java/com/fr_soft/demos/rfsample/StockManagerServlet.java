@@ -34,11 +34,13 @@ public class StockManagerServlet extends HttpServlet {
     		stocks[i] = stockManager.getStocks(items[i]);
     		if(stockManager.checkZero(items[i])){
       		   messages[i] = "Please order";// + stockManager.getOrder(items[i]);//some method
+    		} else {
+    			messages[i] = "";
     		}
     	}
     	
 
-//    	String[] items = stockManager.getItemList{"Cola","Coffee","Tea"};
+//    	String[] items = {"Cola","Coffee","Tea"};
 //    	int[] stocks = {30, 0, 40};
 //    	String[] messages = {"", "Test Message", ""};
     	
