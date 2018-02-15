@@ -1,0 +1,26 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Variables ***
+${BROWSER}        chrome
+
+*** Test Cases ***
+Add Operation Works Well
+    [Template]    Add Operation Workflow
+    Test message
+
+
+*** Keywords ***
+Add Operation Workflow
+    [Arguments]    ${expected_message}
+    Open Application Page
+    Submit Form
+    ${message}=     Get Value    message
+    Should Be Equal    ${message}    ${expected_message}
+    Close Application Page
+
+Open Application Page
+    Open Browser    http://localhost:9080/RFSample/stockmanager    ${BROWSER}
+
+Close Application Page
+    Close Browser

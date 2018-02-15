@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" version="2.4">
     <session-config>
@@ -11,4 +12,27 @@
         <servlet-name>CalculatorServlet</servlet-name>
         <url-pattern>/calculate</url-pattern>
     </servlet-mapping>
+=======
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" version="2.4">
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+    <servlet>
+        <servlet-name>CalculatorServlet</servlet-name>
+        <servlet-class>com.fr_soft.demos.rfsample.CalculatorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CalculatorServlet</servlet-name>
+        <url-pattern>/calculate</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>StockManagerServlet</servlet-name>
+        <servlet-class>com.fr_soft.demos.rfsample.StockManagerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StockManagerServlet</servlet-name>
+        <url-pattern>/stockmanager</url-pattern>
+    </servlet-mapping>
+>>>>>>> branch 'master' of https://github.com/topse-agile/ucl-nii-jimbo.git
 </web-app>
