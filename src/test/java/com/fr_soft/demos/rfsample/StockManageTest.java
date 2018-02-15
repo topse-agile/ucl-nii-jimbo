@@ -27,6 +27,14 @@ public class StockManageTest {
 		
 	}
 	
+	@Test
+	public void checkAmountOdItemIsNotZero(){
+		StockManager stockmanager = new StockManager();
+		
+		stockmanager.add("Tea", 1);
+		
+		assertFalse(stockmanager.checkZero("Tea"));
+	}
 
 
 }
