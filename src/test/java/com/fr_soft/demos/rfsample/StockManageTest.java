@@ -17,6 +17,24 @@ public class StockManageTest {
 		assertThat(stockManager.getStocks("Tea"), is(10));
 	}
 	
+	@Test
+	public void checkAmountOfItemIsZero(){
+		StockManager stockManager = new StockManager();
+		
+		stockManager.add("Tea", 0);
+		
+		assertTrue(stockManager.checkZero("Tea"));
+		
+	}
+	
+	@Test
+	public void checkAmountOdItemIsNotZero(){
+		StockManager stockmanager = new StockManager();
+		
+		stockmanager.add("Tea", 1);
+		
+		assertFalse(stockmanager.checkZero("Tea"));
+	}
 
 
 }

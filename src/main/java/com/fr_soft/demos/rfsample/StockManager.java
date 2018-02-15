@@ -17,4 +17,13 @@ public class StockManager {
     public void add(String item, int amount) {
         stocks.put(item, amount);
     }
+    
+    public boolean checkZero(String item){
+    	
+    	if (stocks.get(item) <= 0 ){
+    		return true;
+    	}
+    	
+    	return false;		
+    }
 }
