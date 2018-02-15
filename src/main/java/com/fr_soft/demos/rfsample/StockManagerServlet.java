@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,13 +17,14 @@ public class StockManagerServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	StockManager stockManager = new StockManager();
+    	String filename = "src\\test\\resources\\ItemList.csv";
+    	filename = "H:\\ucl-nii-jimbo\\src\\test\\resources\\ItemList.csv";
+    	StockManager stockManager = new StockManager(filename);
     	
 //    	String item = stockManager.getItem();
 //    	
 //    	request.setAttribute("item", item);
 //        request.setAttribute("stock", stockManager.getStocks(item));
-    	
 
     	String[] items = stockManager.getItemList();
     	int[] stocks = new int[items.length];
@@ -45,20 +47,6 @@ public class StockManagerServlet extends HttpServlet {
     	request.setAttribute("messages", messages);
     	request.setAttribute("cnt", items.length);
     	
-        request.getRequestDispatcher("index.jsp").forward(request, response);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String item = request.getParameter("item");
-        request.setAttribute("item", item);
-
-        StockManager stockManager = new StockManager();
-//        String message = stockManager.checkIfOrderIsRequired(item);
-        String message = "Test message";
-        
-        request.setAttribute("message", message);
-
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 

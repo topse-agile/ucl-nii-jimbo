@@ -10,7 +10,8 @@ public class StockManageTest {
 
 	@Test
 	public void getCurentCountOfAnItemTest() {
-		StockManager stockManager = new StockManager();
+		String filename = "src\\test\\resources\\ItemList.csv";
+    	StockManager stockManager = new StockManager(filename);
 		
 		stockManager.add("Tea", 10);
 		
@@ -19,7 +20,8 @@ public class StockManageTest {
 	
 	@Test
 	public void checkAmountOfItemIsZero(){
-		StockManager stockManager = new StockManager();
+		String filename = "src\\test\\resources\\ItemList.csv";
+    	StockManager stockManager = new StockManager(filename);
 		
 		stockManager.add("Tea", 0);
 		
@@ -29,11 +31,12 @@ public class StockManageTest {
 	
 	@Test
 	public void checkAmountOdItemIsNotZero(){
-		StockManager stockmanager = new StockManager();
+		String filename = "src\\test\\resources\\ItemList.csv";
+    	StockManager stockManager = new StockManager(filename);
 		
-		stockmanager.add("Tea", 1);
+		stockManager.add("Tea", 1);
 		
-		assertFalse(stockmanager.checkZero("Tea"));
+		assertFalse(stockManager.checkZero("Tea"));
 	}
 	
 }

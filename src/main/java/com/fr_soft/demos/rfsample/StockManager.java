@@ -5,9 +5,24 @@ import java.util.Map;
 
 public class StockManager {
 	private Map<String, Integer> stocks = new HashMap();
+	private Map<String, Integer> orders = new HashMap();
 
+	public StockManager(String filename) {
+    	DB db = new DB();
+    	stocks = db.inputFileToCurrentNumber(filename);
+    	orders = db.inputFileToOrderNumber(filename);
+	}
+	
     public int getStocks(String item) {
         Integer amount = stocks.get(item);
+        if (amount == null) {
+            return 0;
+        }
+        return amount;
+    }
+	
+    public int getOrders(String item) {
+        Integer amount = orders.get(item);
         if (amount == null) {
             return 0;
         }
