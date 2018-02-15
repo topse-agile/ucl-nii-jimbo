@@ -7,29 +7,20 @@ ${BROWSER}        chrome
 *** Test Cases ***
 Add Operation Works Well
     [Template]    Add Operation Workflow
-    2    1    1
-    300    200    100
-    7    5    2
-    XYZ    150    N/A
+    Test message
+
 
 *** Keywords ***
 Add Operation Workflow
-    [Arguments]    ${arg1}    ${arg2}    ${expected}
+    [Arguments]    ${expected_message}
     Open Application Page
-    ${calc_value}=    Calculate In Application Page    ${arg1}    ${arg2}
-    Should Be Equal    ${calc_value}    ${expected}
+    Submit Form
+    ${message}=     Get Value    message
+    Should Be Equal    ${message}    ${expected_message}
     Close Application Page
 
 Open Application Page
-    Open Browser    http://localhost:9080/RFSample/calculate    ${BROWSER}
-
-Calculate In Application Page
-    [Arguments]    ${arg1}    ${arg2}
-    Input Text    arg1    ${arg1}
-    Input Text    arg2    ${arg2}
-    Submit Form
-    ${result}=    Get Value    result
-    [Return]    ${result}
+    Open Browser    http://localhost:9080/RFSample/stockmanager    ${BROWSER}
 
 Close Application Page
     Close Browser
