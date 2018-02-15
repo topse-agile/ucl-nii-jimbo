@@ -26,4 +26,14 @@ public class StockManager {
     	
     	return false;		
     }
+    
+    public String[] getItemList() {
+    	Integer i = 0;
+    	String[] ItemList = new String[stocks.size()];
+    	for (String item : stocks.keySet()) {
+    		ItemList[i] = item;
+    		i++;
+    	}
+    	return ItemList;
+    }
 }

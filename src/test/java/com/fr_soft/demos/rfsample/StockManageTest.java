@@ -35,6 +35,5 @@ public class StockManageTest {
 		
 		assertFalse(stockmanager.checkZero("Tea"));
 	}
-
-
+	
 }
