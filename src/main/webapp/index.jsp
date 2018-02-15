@@ -13,6 +13,9 @@
         	int[] stocks = (int[])request.getAttribute("stocks");
         	String[] messages = (String[])request.getAttribute("messages");
         	out.println("<table>");
+        	out.println("<tr>");
+        	out.println("<th>Item</th><th>Stock</th><th>Message</th>");
+        	out.println("</tr>");
         	for(int i=0;i<items.length;i++){
         		out.println("<tr>");
         		out.println("<td>"+items[i]+"</td>"+"<td>"+stocks[i]+"</td>"+"<td>"+messages[i]+"</td>");

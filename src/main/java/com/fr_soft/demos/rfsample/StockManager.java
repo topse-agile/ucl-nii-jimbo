@@ -21,7 +21,7 @@ public class StockManager {
         return amount;
     }
 	
-    public int getOrders(String item) {
+    public int getOrder(String item) {
         Integer amount = orders.get(item);
         if (amount == null) {
             return 0;

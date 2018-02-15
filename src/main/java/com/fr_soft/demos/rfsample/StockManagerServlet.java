@@ -33,7 +33,7 @@ public class StockManagerServlet extends HttpServlet {
     	for (int i = 0 ; i< items.length; i++) {
     		stocks[i] = stockManager.getStocks(items[i]);
     		if(stockManager.checkZero(items[i])){
-      		   messages[i] = "Please order";// + stockManager.getOrder(items[i]);//some method
+      		   messages[i] = "Please order " + stockManager.getOrder(items[i]);//some method
     		} else {
     			messages[i] = "";
     		}
