@@ -13,7 +13,7 @@ public class InputFileTest {
 	@Test
 	public void inputFileTest() {
 		DB db = new DB();
-		String filename = "hoge";
+		String filename = "hogehoge";
 		Map<String, Integer> stocks = db.imputfile(filename);
 		
 		assertThat(stocks.get("items"), is(10));
