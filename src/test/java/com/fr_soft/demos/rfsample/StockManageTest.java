@@ -17,9 +17,4 @@ public class StockManageTest {
 		assertThat(stockManager.getStocks("Tea"), is(10));
 	}
 	
-	@Test
-	public 
-	
-
-
 }
